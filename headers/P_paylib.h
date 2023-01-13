@@ -1,11 +1,14 @@
 #include <iostream>
 #include <string>
-#include "Paiement.h"
+#ifndef P_PAYLIB_H
+#define P_PAYLIB_H
+#endif
+// #include "Paiement.h"
 
 using namespace std;
 
 
-class P_paylib:Paiement{
+class P_paylib{
 	protected:
 	string phone_number;
 	public:

@@ -1,5 +1,8 @@
 #include <iostream>
 #include <string>
+#ifndef VEHICULE_H
+#define VWHICULE_H
+#endif
 using namespace std;
 
 class Vehicule {
@@ -10,6 +13,8 @@ class Vehicule {
     int number_places;
     int number_max_places;
     public:
+    Vehicule();
+    Vehicule(string imat,string type, string etat, int max_places,int n_places=0);
     string getVehiculeType();
     string getVehiculeEtat();
     string getVehiculeImat();
@@ -21,8 +26,8 @@ class Vehicule {
     void setVehiculeImat(string imat);
     void setNumber_places(int n);
     void setNumber_max_places(int N);
-    Vehicule();
-    Vehicule(string imat,string type, string etat, int n_places, int max_places);
+    void saisir_vehicule();
+    
 
     friend ostream& operator<<(ostream& os, const Vehicule& v);
     bool test_nplaces();

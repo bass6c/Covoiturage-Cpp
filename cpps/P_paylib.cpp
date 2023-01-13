@@ -1,7 +1,20 @@
 #include <iostream>
 #include <string>
-#include "P_paylib.h"
+ #ifndef _XXX_
+ #define _XXX_
+  #endif
+#include "../headers/P_paylib.h"
 
+string Testphonenumber() {
+    string input;
+    cout << "Entrer votre numero de telephone a 10 chiffres: ";
+    cin>>input;
+    if (input.length() == 10) {
+        return input;
+    } else {
+        return "Saisie incorrect";
+    }
+}
 
 using namespace std;
 
@@ -26,9 +39,7 @@ void P_paylib::affiche_number(){
 }
 
 void P_paylib::payer(){
-    string p_num ;
-    cout << "donner votre numero de telephone associe a votre compte bancaire : " << endl ;
-    cin>> p_num;
+    string p_num = Testphonenumber();
     cout <<"Paiement effectuee"<<endl;
 
 }

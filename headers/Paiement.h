@@ -1,5 +1,8 @@
 #include <iostream>
 #include <string>
+#ifndef PAIEMENT_H
+#define PAIEMENT_H
+#endif
 
 using namespace std;
 

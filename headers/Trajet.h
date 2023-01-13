@@ -1,8 +1,13 @@
 #include <iostream>
 #include <string>
-#include "../ville/Ville.h""
-#include "../Date/Date.h"
-#include "../Date/horaire.h"
+#ifndef TRAJET_H
+#define TRAJET_H
+#endif
+#include "Ville.h"
+// #include "Date.h"
+#include "P_carte.h"
+#include "P_paylib.h"
+#include "horaire.h"
 
 using namespace std;
 
@@ -27,5 +32,6 @@ class Trajet{
     char getSens();
     void setSens(char A);
     void affiche_trajet();
+    void saisir_trajet();
     friend bool operator==( Trajet &t1, Trajet &t2);
 };

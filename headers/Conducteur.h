@@ -1,8 +1,11 @@
 #include <iostream>
 #include <string>
-#include "../Vehicule/Vehicule.h"
+#ifndef CONDUCTEUR_H
+#define CONDUCTEUR_H
+#endif
+#include "Vehicule.h"
 #include "Client.h"
-#include "Personne.h"
+// #include "Personne.h"
 
 using namespace std;
 
@@ -13,7 +16,7 @@ class Conducteur:public Personne{
     Vehicule vehicule;
     public:
     Conducteur();
-    Conducteur(string name,string email,string phone, string ID, char permi,Vehicule v);
+    Conducteur(string name,string email,string phone, string ID, char permi,Vehicule v, Trajet t);
     string getId_Conducteur();
     char getPermis();
     Vehicule getVehicule();
@@ -21,9 +24,9 @@ class Conducteur:public Personne{
     void setPermis(char p);
     void setVehicule(Vehicule v);
     void affiche_conducteur();
-    bool accepter(Client c);
-    bool refuser(Client c);
-    int satisfaction ();
+    Conducteur saisie_conducteur();
+    void accepter(int n);
+    int satisfaction () override;
 
 
 

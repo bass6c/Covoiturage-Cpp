@@ -1,11 +1,14 @@
 #include <iostream>
 #include <string>
-#include "Paiement.h"
-#include "../Date/Date.h"
+#ifndef P_CARTE_H
+#define P_CARTE_H
+#endif
+// #include "Paiement.h"
+#include "Date.h"
 
 using namespace std;
 
-class P_carte:Paiement{
+class P_carte{
     protected:
     string carte_number;
     Date date_validate;
@@ -18,7 +21,7 @@ class P_carte:Paiement{
     void setDateValidate(Date dval);
     void setCode(int code);
     P_carte();
-    P_carte(string cnumber, Date datev, int cod);
+    P_carte(string cnumber, Date datev);
     void affiche_carte();
     void payer();
 

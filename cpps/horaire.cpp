@@ -1,6 +1,9 @@
 #include <iostream>
 #include <string>
-#include "horaire.h"
+#ifndef _XXX_
+#define _XXX_
+#endif
+#include "../headers/horaire.h"
 
 using namespace std;
 
@@ -29,8 +32,15 @@ void Horaire::affiche_horaire(){
     cout <<"h";
     cout <<this->minute << endl;
 }
+void Horaire::saisir_horaire(){
+    cout <<"Saisie Horaire: \n"<<endl;
+    cout << "Entrer l'heure : ";
+    cin>>this->heure;
+    cout << "Entrer la minute : ";
+    cin>>this->minute;
+}
 bool operator==( Horaire &h1, Horaire &h2){
-    if ((h1.heure == h2.heure)&&(h1.minute == h2.minute)){
+    if ((h1.getHeure() == h2.getHeure())&&(h1.getMinute() == h2.getMinute())){
         return true;
     }
     else {return false;}

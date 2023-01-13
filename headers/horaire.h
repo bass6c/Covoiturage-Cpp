@@ -1,6 +1,8 @@
 #include <iostream>
 #include <string>
-
+#ifndef HORAIRE_H
+#define HORAIRE_H
+#endif
 using namespace std;
 
 class Horaire{
@@ -15,4 +17,6 @@ class Horaire{
     void setHeure(int h);
     void setMinute(int m);
     void affiche_horaire();
+    void saisir_horaire();
+    friend bool operator==( Horaire &h1, Horaire &h2);
 };

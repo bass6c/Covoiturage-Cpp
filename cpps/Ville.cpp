@@ -1,7 +1,10 @@
 #include <iostream>
 #include <string>
-#include "Ville.h"
+#ifndef _XXX_
+#define _XXX_
 
+#include "../headers/Ville.h"
+ #endif
 using namespace std;
 
 Ville::Ville(){
@@ -23,6 +26,10 @@ void Ville::setVilleName(string nam){
 }
 void Ville::affiche_ville(){
     cout <<" "<<this->name;
+}
+void Ville::saisir_ville(){
+    cout << "Entrer votre ville: ";
+    cin>>this->name;
 }
 bool operator==( Ville &v1, Ville &v2){
     if (v1.id_ville == v2.id_ville){

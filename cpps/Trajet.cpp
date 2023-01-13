@@ -1,6 +1,9 @@
 #include <iostream>
 #include <string>
-#include "Trajet.h"
+#ifndef _XXX_
+#define _XXX_
+#endif
+#include "../headers/Trajet.h"
 
 using namespace std;
 
@@ -58,9 +61,20 @@ void Trajet::affiche_trajet(){
     cout << "Sens: "<<this->sens<<endl;
 
 }
-
+void Trajet::saisir_trajet(){
+    cout<<"Origine: \n";
+    this->origine.saisir_ville();
+    cout<<"Destination: \n";
+    this->destination.saisir_ville();
+    this->horaire.saisir_horaire();
+    this->date.saisir_date();
+    cout << "Entrer le sens de votre trajet (A:allée, D:double)";
+    cin>>this->sens;
+}
 bool operator==( Trajet &t1, Trajet &t2){
-    if ((t1.origine == t2.origine)&&(t1.destination == t2.destination)&&(t1.date == t2.date)&&(t1.horaire == t2.horaire)&&(t1.sens == t2.sens)){
+    Horaire a = t1.getHoraire();
+    Horaire b = t2.getHoraire();
+    if ((t1.origine == t2.origine)&&(t1.destination == t2.destination)&&(t1.date == t2.date)&&(&a == &b)&&(t1.sens == t2.sens)){
         return true;
     }
     else{return false;}
